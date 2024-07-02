@@ -1,0 +1,197 @@
+/* Blue: hsl(246, 80%, 60%)
+
+- Light red (work): hsl(15, 100%, 70%)
+- Soft blue (play): hsl(195, 74%, 62%)
+- Light red (study): hsl(348, 100%, 68%)
+- Lime green (exercise): hsl(145, 58%, 55%)
+- Violet (social): hsl(264, 64%, 52%)
+- Soft orange (self care): hsl(43, 84%, 65%)
+
+### Neutral
+
+- Very dark blue: hsl(226, 43%, 10%)
+- Dark blue: hsl(235, 46%, 20%)
+- Desaturated blue: hsl(235, 45%, 61%)
+- Pale Blue: hsl(236, 100%, 87%) */
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 18px;
+    background-color: hsl(226, 43%, 10%);  
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content
+}
+main{
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.activity-tracker{
+    width: fit-content;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: hsl(235, 46%, 20%);
+}
+.activity-tracker .activity-tracker-header{
+    background-color: hsl(246, 80%, 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 30px;
+    border-radius: 15px;
+}
+.activity-tracker .activity-tracker-header img{
+    width: 5rem;
+    border: 3.5px solid white;
+    border-radius: 50%;
+}
+.activity-tracker .activity-tracker-header .text p{
+    color: hsl(235, 75%, 81%);
+}
+.activity-tracker .activity-tracker-header .text h2{
+    color: white;
+    font-weight: 300;
+    margin-top: 0.2rem;
+}
+.activity-tracker ul{
+    display: flex;
+    list-style-type: none;
+    color: hsl(235, 45%, 61%);
+    justify-content: space-around;
+    padding: 25px 0px;
+}
+.activity-tracker ul li{
+    cursor: pointer;
+}
+.selected{
+    color: white;
+}
+.cards-container, .cards-container-top, .cards-container-bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.work{
+    background-color: hsl(15, 100%, 70%);
+    background-image: url(images/icon-work.svg);
+}
+.play{
+    background-color: hsl(195, 74%, 62%);
+    background-image: url(images/icon-play.svg);
+}
+.study{
+    background-color: hsl(348, 100%, 68%);
+    background-image: url(images/icon-study.svg);
+}
+.exercise{
+    background-color: hsl(145, 58%, 55%);
+    background-image: url(images/icon-exercise.svg);
+}
+.social{
+    background-color: hsl(264, 64%, 52%);
+    background-image: url(images/icon-social.svg);
+}
+.self-care{
+    background-color: hsl(43, 84%, 65%);
+    background-image: url(images/icon-self-care.svg);
+}
+.card{
+     border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: 250px -11px;  /* Position the image to the left center */
+    background-size: contain;  
+    background-size: 80px 80px;
+    height: fit-content;
+}
+.card .top{
+    height: 40px;
+}
+.card .card-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(235, 46%, 20%);
+    padding: 30px;
+    border-radius: 15px;
+}
+.card .card-content:hover{
+    background-color: hsl(234, 36%, 32%);
+    cursor: pointer;
+}
+.card .card-content .content-left > p{
+    font-weight: 500;
+    color: rgb(228, 224, 224);
+}
+.card .card-content .content-left > h1{
+    font-weight: 300;
+    color: rgb(193, 191, 191);
+    font-size: 2rem;
+    margin-top: 5px;
+}
+.card .card-content .content-right{
+    text-align: right;
+}
+.card .card-content .content-right > p{
+    color: hsl(236, 27%, 69%);
+    font-size: 1rem;
+    margin-top: 15px;
+}
+.icon{
+    cursor: pointer;
+}
+@media(min-width:600px){
+    main{
+        flex-direction: row;
+    }
+    .activity-tracker{
+        width: min-content;
+    }
+    .activity-tracker .activity-tracker-header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        padding-right: 6rem;
+        padding-bottom: 4.5rem;
+    }
+    .activity-tracker .activity-tracker-header .text h2{
+    }
+    .activity-tracker ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 25px 25px;
+    }
+    .cards-container-top, .cards-container-bottom{
+        flex-direction: row;
+    }
+    .card .card-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .card .card-content .content-left > h1{
+        margin-top: 20px;
+        color: white;
+        font-weight: 300;
+    }
+    .card .card-content .content-right > p{
+        margin-top: -10px;
+    }
+    .card .card-content .content-right > .icon{
+        position: relative;
+        bottom: 85px;
+    }
+}
